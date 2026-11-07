@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ゲーム置き場</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23171717'/></svg>">
+<style>
+:root{--bg:#fff;--tx:#171717;--board:#808080;--line:#1c1c1c;--card:#fafafa;--bd:#e5e5e5;--sb:#171717;--sw:#f5f5f5;--fr:rgba(0,0,0,.34);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]):not([data-theme="go"]){--bg:#171717;--tx:#f5f5f5;--card:#262626;--bd:#3a3a3a}}
+:root[data-theme="dark"]{--bg:#171717;--tx:#f5f5f5;--card:#262626;--bd:#3a3a3a}
+:root[data-theme="go"]{--bg:#D9B382;--tx:#3e2211;--board:#AC8353;--line:#3b2610;--card:#ebd19d;--bd:#cbb07a;--sb:#1c1208;--sw:#faf5ea;--fr:rgba(50,25,5,.4)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:12px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Sans",sans-serif;background:var(--bg);color:var(--tx);-webkit-user-select:none;user-select:none;touch-action:manipulation}
+@media(min-width:640px){body{padding:24px}}
+.wrap{width:100%;max-width:36rem;display:flex;flex-direction:column;align-items:center;gap:16px}
+h1{margin:4px 0 0;font-size:1.5rem;font-weight:800;letter-spacing:.05em;text-align:center}
+@media(min-width:640px){h1{font-size:1.875rem}}
+.lead{margin:0;font-size:.875rem;opacity:.7;text-align:center}
+.list{width:100%;display:flex;flex-direction:column;gap:12px}
+.card{display:flex;align-items:center;gap:16px;padding:14px;background:var(--card);border:1px solid var(--bd);border-radius:12px;color:inherit;text-decoration:none;transition:transform .1s}
+.card:active{transform:scale(.97)}
+.card:focus-visible,.sp:focus-visible{outline:2px solid var(--tx);outline-offset:2px}
+.card svg{flex:none;width:96px;height:96px;border-radius:8px;display:block}
+.card h2{margin:0;font-size:1.15rem;font-weight:800;letter-spacing:.04em}
+.card p{margin:4px 0 0;font-size:.8rem;line-height:1.6;opacity:.75}
+.go{margin-left:auto;flex:none;font-size:1.4rem;opacity:.5}
+.themes{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sp{border:1px solid var(--bd);background:var(--card);color:inherit;border-radius:12px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.sp.on{background:var(--tx);color:var(--bg)}
+footer{font-size:.75rem;opacity:.6;text-align:center}
+footer a{color:inherit}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ゲーム置き場</h1>
+  <p class="lead">囲碁やチェスから生まれた、自作のボードゲーム</p>
+
+  <nav class="list" aria-label="ゲーム一覧">
+    <!-- url を自分のGitHub Pagesのアドレスに書き換えてください -->
+    <a class="card" href="https://USERNAME.github.io/mamego/">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+<rect width="100" height="100" fill="var(--board)"/>
+<g stroke="var(--line)" stroke-width="1.5">
+<path d="M17 17V83M17 17H83"/>
+<path d="M39 17V83M17 39H83"/>
+<path d="M61 17V83M17 61H83"/>
+<path d="M83 17V83M17 83H83"/>
+</g>
+<rect x="8" y="30" width="40" height="18" rx="9" fill="var(--sb)" stroke="var(--sw)" stroke-opacity=".55" stroke-width="1.2"/>
+<rect x="30" y="52" width="18" height="40" rx="9" fill="var(--sb)" stroke="var(--sw)" stroke-opacity=".55" stroke-width="1.2"/>
+<rect x="52" y="30" width="18" height="40" rx="9" fill="var(--sw)" stroke="var(--sb)" stroke-opacity=".55" stroke-width="1.2"/>
+<rect x="74" y="52" width="18" height="40" rx="9" fill="var(--sw)" stroke="var(--sb)" stroke-opacity=".55" stroke-width="1.2"/>
+</svg>
+      <div><h2>豆碁</h2><p>豆の形をしたドミノ石で打つ囲碁。</p></div>
+      <span class="go" aria-hidden="true">›</span>
+    </a>
+
+    <a class="card" href="https://USERNAME.github.io/hexago/">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+<rect width="100" height="100" fill="var(--board)"/>
+<g stroke="var(--line)" stroke-width="1.5" stroke-linecap="round">
+<path d="M8.0 50.0L29.0 50.0M8.0 50.0L18.5 68.2M18.5 68.2L39.5 68.2M18.5 68.2L29.0 86.4M29.0 86.4L50.0 86.4M18.5 31.8L39.5 31.8M18.5 31.8L29.0 50.0M18.5 31.8L8.0 50.0M29.0 50.0L50.0 50.0M29.0 50.0L39.5 68.2M29.0 50.0L18.5 68.2M39.5 68.2L60.5 68.2M39.5 68.2L50.0 86.4M39.5 68.2L29.0 86.4M50.0 86.4L71.0 86.4M29.0 13.6L50.0 13.6M29.0 13.6L39.5 31.8M29.0 13.6L18.5 31.8M39.5 31.8L60.5 31.8M39.5 31.8L50.0 50.0M39.5 31.8L29.0 50.0M50.0 50.0L71.0 50.0M50.0 50.0L60.5 68.2M50.0 50.0L39.5 68.2M60.5 68.2L81.5 68.2M60.5 68.2L71.0 86.4M60.5 68.2L50.0 86.4M50.0 13.6L71.0 13.6M50.0 13.6L60.5 31.8M50.0 13.6L39.5 31.8M60.5 31.8L81.5 31.8M60.5 31.8L71.0 50.0M60.5 31.8L50.0 50.0M71.0 50.0L92.0 50.0M71.0 50.0L81.5 68.2M71.0 50.0L60.5 68.2M81.5 68.2L71.0 86.4M71.0 13.6L81.5 31.8M71.0 13.6L60.5 31.8M81.5 31.8L92.0 50.0M81.5 31.8L71.0 50.0M92.0 50.0L81.5 68.2"/>
+</g>
+<circle cx="50.0" cy="50.0" r="8.5" fill="var(--sb)" stroke="var(--sw)" stroke-opacity=".6" stroke-width="1.2"/>
+<circle cx="39.5" cy="68.2" r="8.5" fill="var(--sb)" stroke="var(--sw)" stroke-opacity=".6" stroke-width="1.2"/>
+<circle cx="71.0" cy="50.0" r="8.5" fill="var(--sw)" stroke="var(--sb)" stroke-opacity=".6" stroke-width="1.2"/>
+<circle cx="39.5" cy="31.8" r="8.5" fill="var(--sw)" stroke="var(--sb)" stroke-opacity=".6" stroke-width="1.2"/>
+</svg>
+      <div><h2>hexago</h2><p>六角形の盤で打つ囲碁。AIと対戦できます。</p></div>
+      <span class="go" aria-hidden="true">›</span>
+    </a>
+
+    <a class="card" href="https://USERNAME.github.io/checkmeigo/">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+<rect width="100" height="100" fill="var(--board)"/>
+<rect x="41.1" y="19.3" width="17.8" height="17.8" fill="none" stroke="var(--fr)" stroke-width="1.4"/>
+<rect x="19.3" y="41.1" width="17.8" height="17.8" fill="none" stroke="var(--fr)" stroke-width="1.4"/>
+<rect x="62.8" y="41.1" width="17.8" height="17.8" fill="none" stroke="var(--fr)" stroke-width="1.4"/>
+<rect x="41.1" y="62.8" width="17.8" height="17.8" fill="none" stroke="var(--fr)" stroke-width="1.4"/>
+<path stroke="var(--line)" stroke-width="1.4" d="M17.4 17.4V82.6M17.4 17.4H82.6M39.1 17.4V82.6M17.4 39.1H82.6M60.9 17.4V82.6M17.4 60.9H82.6M82.6 17.4V82.6M17.4 82.6H82.6"/>
+<text x="28.3" y="81.3" font-size="28.3" text-anchor="middle" fill="#fff" stroke="#222" stroke-width="2" paint-order="stroke" font-family="Segoe UI Symbol,Noto Sans Symbols2,Apple Symbols,serif">♞</text>
+<text x="71.7" y="37.9" font-size="28.3" text-anchor="middle" fill="#111" stroke="#ddd" stroke-width="2" paint-order="stroke" font-family="Segoe UI Symbol,Noto Sans Symbols2,Apple Symbols,serif">♜</text>
+<circle cx="39.1" cy="39.1" r="7.8" fill="#111" stroke="#999" stroke-width="1.5"/>
+<circle cx="60.9" cy="60.9" r="7.8" fill="#fafafa" stroke="#333" stroke-width="1.5"/>
+</svg>
+      <div><h2>チェックメイゴ</h2><p>チェスの駒を動かし、碁石を格子点に置くゲーム。</p></div>
+      <span class="go" aria-hidden="true">›</span>
+    </a>
+  </nav>
+
+  <div class="themes" id="themes" role="group" aria-label="表示テーマ">
+    <button class="sp" data-t="light">ライト</button>
+    <button class="sp" data-t="dark">ダーク</button>
+    <button class="sp" data-t="go">碁盤</button>
+  </div>
+
+  <footer><a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a></footer>
+</div>
+<script>
+const root=document.documentElement,box=document.getElementById('themes');
+function mark(t){box.querySelectorAll('.sp').forEach(b=>b.classList.toggle('on',b.dataset.t===t))}
+let cur;try{cur=localStorage.getItem('theme')}catch(e){}
+if(cur){root.dataset.theme=cur}
+mark(cur||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+box.onclick=e=>{const t=e.target.dataset.t;if(!t)return;root.dataset.theme=t;mark(t);try{localStorage.setItem('theme',t)}catch(e){}};
+</script>
+</body>
+</html>
